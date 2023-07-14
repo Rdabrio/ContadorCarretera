@@ -15,8 +15,8 @@ router.get('/data', (req, res) => {
 })
 
 router.post('/data', bodyParser.json(), (req, res) => {
-    let number = 1
-    console.log(number)
+    let number = req.body.number
+    console.log(req.body)
     let data = {
         "number":number
     }
