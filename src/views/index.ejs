@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Subnorm@les</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+
+    <header>
+
+        <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/historial">Historial</a></li>
+        </ul>
+            
+    </header>
+
+    <section id="pagina">
+        <div class="pagina">
+            <h1>Contador de conductores</h1>
+            <div class="explicacion">
+                
+                <h3>- ¿Tu también te cansas de los que no saben conducir?</h3>
+                <h3>- No tengo ninguna solución</h3>
+                <h3>- Pero puedes dar click al botón para sumar uno al contador de "listos"</h3> 
+                <h3>- Apuntando tu nombre (si lo dejas en blanco saldrá como anónimo)</h3>  
+            
+            </div>
+            
+
+            <div class="formulario">
+                <form>
+                    <div class="formtext">
+                        <input type="text" required="" autocomplete="off">
+                        <label for="formtext">Nombre</label>
+                    </div>
+                    
+                </form>
+                <div class="button-div">
+                    <button>+ Añadir</button>
+                </div>
+            </div>
+
+        
+            <div class="contador">
+                <h2>Total:</h2>
+                <div class="contador-numero">
+                    <h2 id = "numero"></h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script type="module" src="/actualizador.js"></script>
+</body>
+</html>
