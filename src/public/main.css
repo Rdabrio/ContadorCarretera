@@ -75,6 +75,50 @@ header a:hover {
     text-align: left;
 }
 
+#error-boton {
+    margin: auto;
+    position: absolute;
+    z-index: 1;
+    width: 320px;
+    height: 170px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 370px;
+    background-color: #344047;
+    text-align: center;
+    border-radius: 15px;
+    opacity: 0;
+}
+
+#error-boton h3 {
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: 23px;
+    border-bottom: 1px solid whitesmoke;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+
+#error-boton h4 {
+    color: whitesmoke;
+    font-size: 17px;
+}
+
+.animacionMoverse {
+    animation: animacionMoverse 1s;
+}
+
+@keyframes animacionMoverse {
+    0% {
+        transform: translateY(80px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
 .formulario {
     margin: 0 auto;
     width: auto;
@@ -94,7 +138,6 @@ header a:hover {
 }
 
 .formtext input {
-    /*width: 70%;*/
     font-size: 100%;
     padding: 0.8em;
     outline: none;
