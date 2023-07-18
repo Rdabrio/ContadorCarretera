@@ -7,6 +7,9 @@ var vecesClick = 0
 
 function actualizarNumero() {
 
+    
+    
+
     if (vecesClick === 0 && minutos === 0 && segundos === 0) {
         actualiza()
         if (segundos === 0 && minutos === 0) {
@@ -14,6 +17,11 @@ function actualizarNumero() {
             segundos = 1
             localStorage.setItem('horaActual', `${new Date().toLocaleTimeString()}`)
             iniciaContador()    
+
+            let text = document.querySelector('input').value
+            if (text === "") text = "Anónimo"
+            console.log(text)
+            localStorage.setItem("text", text)
         }
         
     }
