@@ -7,9 +7,6 @@ var vecesClick = 0
 
 function actualizarNumero() {
 
-    
-    
-
     if (vecesClick === 0 && minutos === 0 && segundos === 0) {
         actualiza()
         if (segundos === 0 && minutos === 0) {

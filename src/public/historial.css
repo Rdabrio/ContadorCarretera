@@ -51,11 +51,11 @@ header a:hover {
     border-radius: 1px;
 }
 
-.infocontainer {
+#infocontainer {
     margin: 0 auto;
-    width: 300px;
-    height: 300px;
-    background-color: whitesmoke;
+    width: auto;
+    height: auto;
+    background-color: black;
     margin-top: 100px;
     text-align: center;
 }
