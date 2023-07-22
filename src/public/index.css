@@ -64,7 +64,6 @@ header a:hover {
 
 .pagina h1 {
     font-size: 35px;
-    border-bottom: solid 1px white;
     width: auto;
 }
 
@@ -105,34 +104,6 @@ header a:hover {
     font-size: 17px;
 }
 
-.animacionMoverse {
-    animation: animacionMoverse 5s;
-}
-
-@keyframes animacionMoverse {
-    0% {
-        transform: translateY(80px);
-        
-    }
-
-    25% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 1;
-    }
-
-    75% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-    }
-}
-
 .formulario {
     margin: 0 auto;
     width: auto;
@@ -140,7 +111,6 @@ header a:hover {
     margin-top: 70px;
     
 }
-
 
 .formtext {
     
@@ -257,6 +227,66 @@ button:active {
     padding-bottom: 10px;
 }
 
+/*
+    ANIMACIONES
+*/
+
+.animacionMoverse {
+    animation: animacionMoverse 5s;
+}
+
+@keyframes animacionMoverse {
+    0% {
+        transform: translateY(80px);
+        opacity: 0;
+        
+    }
+
+    25% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.animacionMoverseInversa {
+    animation: animacionMoverseInversa 5s;
+}
+
+@keyframes animacionMoverseInversa {
+    0% {
+        transform: translateY(-80px);
+        opacity: 0;
+    }
+
+    25% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
 
 
 

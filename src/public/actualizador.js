@@ -106,6 +106,15 @@ async function actualiza() {
 
 async function mostrarNumero() {
 
+    document.querySelector('h1').classList.add("animacionMoverseInversa")
+    const elements = document.getElementsByClassName("animacionEscribir")
+    for (let i = 0; i < elements.length; ++i) {
+        let text = elements[i].innerHTML
+        elements[i].innerHTML =""
+        animacionEscribir(elements[i], 0, text.length, text)
+    }
+    
+
     calculaTiempo()    
     ++vecesClick
     localStorage.setItem('horaActual', `${new Date().toLocaleTimeString()}`)
@@ -118,6 +127,15 @@ async function mostrarNumero() {
     })
 
     document.getElementById('numero').innerHTML = response.number
+}
+
+function animacionEscribir(element, i, length, text) {
+
+    if ( i < length) {
+        element.innerHTML += text.charAt(i)
+        i++
+        setTimeout(animacionEscribir, 25, element, i, length, text)
+    }
 }
 
 function calculaTiempo() {

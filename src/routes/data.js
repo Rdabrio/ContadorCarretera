@@ -21,18 +21,6 @@ router.post('/data', bodyParser.json(), (req, res) => {
         "number":number
     }
     fs.writeFileSync(join(PATH, '../public/data.json'), JSON.stringify(data))
-
-    /* Funciona para añadir un dato mas al json y guardarlo
-    let rawdata = fs.readFileSync(join(PATH, '../public/historialData.json'))
-    let historialData = JSON.parse(rawdata)
-    console.log(historialData)
-
-    historialData.push({"nombre": "R", "fecha": "22-07-2023"})
-    fs.writeFileSync(join(PATH, '../public/historialData.json'), JSON.stringify(historialData))
-    rawdata = fs.readFileSync(join(PATH, '../public/historialData.json'))
-    historialData = JSON.parse(rawdata)
-    console.log(historialData)
-    */
     res.json(data)
 })
 
