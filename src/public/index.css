@@ -182,6 +182,7 @@ header a:hover {
   
 .formtext :is(input:focus, input:valid) {
     border-color: #486b81;
+    color: whitesmoke;
 }
 
 .button-div {

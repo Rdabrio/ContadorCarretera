@@ -9,7 +9,8 @@ async function muestraDatos() {
     console.log(response)
     for (let i = 0; i < response.length; ++i) {
         const container = document.createElement("div")
-        container.innerHTML = `Nombre: ${response[i].nombre} Fecha: ${response[i].fecha}`
+        container.innerHTML = `Nombre: ${response[i].nombre}  Fecha: ${response[i].fecha}`
+        container.classList.add("infodiv")
         document.getElementById("infocontainer").appendChild(container)
     }
 }

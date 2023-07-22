@@ -14,11 +14,6 @@ function actualizarNumero() {
             segundos = 1
             localStorage.setItem('horaActual', `${new Date().toLocaleTimeString()}`)
             iniciaContador()    
-
-            let text = document.querySelector('input').value
-            if (text === "") text = "Anónimo"
-            console.log(text)
-            localStorage.setItem("text", text)
         }
         
     }
@@ -80,8 +75,33 @@ async function actualiza() {
     .then(response => response.json())
     .catch(error => {
         throw(error);
-    })
+    })    
     document.getElementById('numero').innerHTML = response.number
+
+    let nombre = document.querySelector("input").value
+    if (nombre === "") nombre = "Anónimo"
+    console.log(nombre)
+
+    
+    let historialData = {
+        "nombre": `${nombre}`,
+        "fecha": `${new Date().toLocaleString()}`
+    }
+
+    const historialresponse = await fetch('http://localhost:3000/historialData', {
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(historialData)
+    })
+    .then(response => response.json)
+    .catch(error => {
+        throw(error)
+    })
+    
+
 }
 
 async function mostrarNumero() {
