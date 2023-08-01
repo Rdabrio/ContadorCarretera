@@ -267,7 +267,7 @@ button:active {
     }
 
     100% {
-        opacity: 0;
+        opacity: 1;
     }
 }
 
