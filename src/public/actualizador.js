@@ -1,5 +1,5 @@
 document.querySelector('button').addEventListener('click', actualizarNumero)
-window.onload = mostrarNumero
+window.onload = inicializa
 
 var minutos = 0
 var segundos = 0
@@ -64,7 +64,7 @@ async function actualiza() {
         "number":numero
     }
 
-    const response = await fetch('http://localhost:3000/data', {
+    const response = await fetch(`${window.location.origin}/data`, {
         method: 'POST',
         mode: 'cors',
         headers: {
@@ -88,7 +88,7 @@ async function actualiza() {
         "fecha": `${new Date().toLocaleString()}`
     }
 
-    const historialresponse = await fetch('http://localhost:3000/historialData', {
+    const historialresponse = await fetch(`${window.location.origin}/historialData`, {
         method: 'POST',
         mode: 'cors',
         headers: {
@@ -104,7 +104,24 @@ async function actualiza() {
 
 }
 
-async function mostrarNumero() {
+async function inicializa() {
+
+    añadeAnimaciones()
+    calculaTiempo()    
+    ++vecesClick
+    localStorage.setItem('horaActual', `${new Date().toLocaleTimeString()}`)
+    iniciaContador()
+
+    const response = await fetch(`${window.location.origin}/data`)
+    .then(response => response.json())
+    .catch(error => {
+        throw(error);
+    })
+
+    document.getElementById('numero').innerHTML = response.number
+}
+
+function añadeAnimaciones() {
 
     document.querySelector('h1').classList.add("animacionMoverseInversa")
     const elements = document.getElementsByClassName("animacionEscribir")
@@ -113,20 +130,12 @@ async function mostrarNumero() {
         elements[i].innerHTML =""
         animacionEscribir(elements[i], 0, text.length, text)
     }
-    
 
-    calculaTiempo()    
-    ++vecesClick
-    localStorage.setItem('horaActual', `${new Date().toLocaleTimeString()}`)
-    iniciaContador()
-
-    const response = await fetch('http://localhost:3000/data')
-    .then(response => response.json())
-    .catch(error => {
-        throw(error);
+    document.getElementById("formulario").classList.add("animacionMoverse")
+    let textos = document.querySelectorAll('h2')
+    textos.forEach((h2)=> {
+        h2.classList.add("animacionMoverse")
     })
-
-    document.getElementById('numero').innerHTML = response.number
 }
 
 function animacionEscribir(element, i, length, text) {
