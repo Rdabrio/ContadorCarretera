@@ -236,6 +236,12 @@ button:active {
     margin: 0 auto;
     padding-bottom: 30px;
     padding-top: 10px;
+    height: auto;
+    max-width: 1100px;
+}
+
+#numero {
+    font-size: 30px;
 }
 
 /*

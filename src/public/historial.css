@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,300&display=swap');
+
 
 * {
     padding: 0;
@@ -64,12 +66,36 @@ header a:hover {
 #infotexto {
     color: black;
     padding-top: 50px;
+    display: flex;
 }
 
 .infodiv {
+    color: white;
     margin: 0 auto;
     margin-top: 15px;
-    background-color: whitesmoke;
-    color: black;
-    
+    height: 70px;
+    display: flex;
+    border: solid 1px white;
+    height: 10vh;
+}
+
+.h3leftcontainer {
+    text-align: left;
+    border: solid 1px blue;
+}
+
+.lineadiv {
+    background-color: red;
+    width: 100px;
+}
+
+.h3rightcontainer {
+    text-align: right;
+    border: solid 1px blue;
+}
+
+h3 {
+    margin: 0 auto;
+    letter-spacing: 2px;
+    font-family: 'Bricolage Grotesque', sans-serif;
 }
